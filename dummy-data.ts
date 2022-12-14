@@ -52,6 +52,7 @@ export function getFilteredEvents (dateFilter: any) {
   return filteredEvents;
 }
 
+//通过id获取专题活动
 export function getEventById (id: string) {
   return DUMMY_EVENTS.find((event) => event.id === id);
 }

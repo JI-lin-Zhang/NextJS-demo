@@ -1,21 +1,19 @@
 import Link from "next/link";
-import React from "react";
+import React, { FC, ReactNode } from "react";
 import classes from "./button.module.css";
-import ArrowRightIcon from '../icons/arrow-right-icon';
 
 interface IButtonOwnProps {
-  link: string;
-  LinkContent: any;
+  url: string;
+  children?: ReactNode;
 }
 
-export default function Button(props: IButtonOwnProps) {
-  const { link, LinkContent } = props;
+const Button: FC<IButtonOwnProps> = (props) => {
+  const { url, children } = props;
   return (
-    <Link className={classes.btn} href={link}>
-      {LinkContent}
-      <span className={classes.icon}>
-        <ArrowRightIcon />
-      </span>
+    <Link className={classes.btn} href={url}>
+      {children}
     </Link>
   );
-}
+};
+
+export default Button;

@@ -1,11 +1,10 @@
-import Link from "next/link";
 import React from "react";
 import { IEventInterface } from "../../constant/events.interface";
 import Button from "../ui/button";
 import classes from "./event-item.module.css";
-import DateIcon from '../icons/date-icon';
-import AddressIcon from '../icons/address-icon';
-import ArrowRightIcon from '../icons/arrow-right-icon';
+import DateIcon from "../icons/date-icon";
+import AddressIcon from "../icons/address-icon";
+import ArrowRightIcon from "../icons/arrow-right-icon";
 
 interface IEventItemOwnProps {
   data: IEventInterface;
@@ -25,6 +24,17 @@ export default function EventItem(props: IEventItemOwnProps) {
 
   const formattedAddress = location.replace(", ", "\n");
 
+  const ButtonContent = () => {
+    return (
+      <>
+        <span>Export Event</span>
+        <span className={classes.icon}>
+          <ArrowRightIcon />
+        </span>
+      </>
+    );
+  };
+
   return (
     <li className={classes.item}>
       <img src={`/${image}`} alt={title} />
@@ -41,7 +51,7 @@ export default function EventItem(props: IEventItemOwnProps) {
           </div>
         </div>
         <div className={classes.actions}>
-          <Button link={exploreLink} LinkContent={<span>Export Event</span>} />
+          <Button url={exploreLink}>{ButtonContent()}</Button>
         </div>
       </div>
     </li>
