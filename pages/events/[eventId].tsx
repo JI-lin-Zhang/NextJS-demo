@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function EventDetailPage() {
-  return (
-    <div>EventDetailPage</div>
-  )
+  return <div>EventDetailPage</div>;
 }
