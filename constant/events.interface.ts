@@ -7,3 +7,8 @@ export interface IEventInterface {
     image: string,
     isFeatured: boolean,
 }
+
+export interface IDataFilter {
+  year: number,
+  month: number,
+}

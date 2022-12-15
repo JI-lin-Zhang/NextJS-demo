@@ -1,3 +1,5 @@
+import { IDataFilter } from "./constant/events.interface";
+
 const DUMMY_EVENTS = [
   {
     id: 'e1',
@@ -41,7 +43,7 @@ export function getAllEvents () {
   return DUMMY_EVENTS;
 }
 
-export function getFilteredEvents (dateFilter: any) {
+export function getFilteredEvents (dateFilter: IDataFilter) {
   const { year, month } = dateFilter;
 
   let filteredEvents = DUMMY_EVENTS.filter((event) => {
