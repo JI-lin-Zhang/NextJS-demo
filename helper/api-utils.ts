@@ -16,3 +16,13 @@ export async function getFeaturedEvents(){
   const allEvents = await getAllEvents() as IEventInterface[];
   return allEvents.filter(event => event.isFeatured)
 }
+
+export async function getEventById(id:string){
+  const res = await axios.get(`/${id}`)
+  return res.data.data[0]
+}
+
+export async function getFilteredEvents(year:number, month:number){
+  const res = await axios.get(`/${year}/${month}`)
+  return res.data.data
+}

@@ -12,7 +12,7 @@ interface IEventItemOwnProps {
 
 export default function EventItem(props: IEventItemOwnProps) {
   const { data } = props;
-  const { image, title, date, location, id } = data;
+  const { image, title, date, location, eid } = data;
 
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -20,7 +20,7 @@ export default function EventItem(props: IEventItemOwnProps) {
     year: "numeric",
   });
 
-  const exploreLink = `/events/${id}`;
+  const exploreLink = `/events/${eid}`;
 
   const formattedAddress = location.replace(", ", "\n");
 

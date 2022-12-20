@@ -1,5 +1,6 @@
 export interface IEventInterface {
     id: string,
+    eid:string,
     title: string,
     description:string,
     location: string,

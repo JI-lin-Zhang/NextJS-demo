@@ -14,5 +14,7 @@ export async function getStaticProps() {
     props: {
       featuredEvents,
     },
+    // 每半小时重新执行下当前函数
+    revalidate: 1800,
   };
 }

@@ -12,7 +12,7 @@ export default function EventList(props: IEventListProps) {
   return (
     <ul className={classes.list}>
       {items.map((item: IEventInterface) => (
-        <EventItem key={item.id} data={item} />
+        <EventItem key={item.eid} data={item} />
       ))}
     </ul>
   );
