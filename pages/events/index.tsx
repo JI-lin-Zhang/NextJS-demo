@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import EventList from "../../components/events/event-list";
@@ -13,6 +14,12 @@ export default function AllEventsPage(props: any) {
   };
   return (
     <div>
+      <Head>
+        {/* 添加网页标题 */}
+        <title>NextJs Events</title>
+        {/* 添加网页元信息 */}
+        <meta name="description" content="All events." key="indexKey" />
+      </Head>
       <EventsSearch onSearch={findEventHandler} />
       <EventList items={allEvents} />
     </div>
